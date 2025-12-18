@@ -1,0 +1,65 @@
+body {
+  background: #fff5f7;
+  font-family: 'Pretendard', sans-serif;
+}
+
+.header {
+  background: rgba(255,255,255,0.8);
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #fde2e7;
+}
+
+.logo {
+  color: #fb7185;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.card {
+  background: white;
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 32px;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(251,113,133,0.1);
+}
+
+textarea {
+  width: 100%;
+  min-height: 180px;
+  border-radius: 16px;
+  padding: 16px;
+  border: 1px solid #fbcfe8;
+}
+
+.btn-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.btn {
+  flex: 1;
+  padding: 14px;
+  border-radius: 999px;
+  text-align: center;
+}
+
+.submit {
+  background: #fb7185;
+  color: white;
+}
+
+.cancel {
+  border: 1px solid #ddd;
+  color: #666;
+}
+
+.badge {
+  background: #ffe4e6;
+  color: #fb7185;
+  padding: 4px 12px;
+  border-radius: 999px;
+}

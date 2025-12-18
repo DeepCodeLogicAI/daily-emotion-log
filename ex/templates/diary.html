@@ -1,0 +1,20 @@
+{% include "header.html" %}
+
+<div class="card">
+  <h3>오늘의 마음을 들려주세요</h3>
+
+  <form method="post">
+    <label>날짜</label>
+    <input type="date" name="diary_date" required>
+
+    <label>내용</label>
+    <textarea name="content" placeholder="오늘 어떤 일이 있었나요?" required></textarea>
+
+    <input type="hidden" name="user_id" value="1">
+
+    <div class="btn-row">
+      <a href="/" class="btn cancel">취소</a>
+      <button type="submit" class="btn submit">저장 및 분석하기</button>
+    </div>
+  </form>
+</div>

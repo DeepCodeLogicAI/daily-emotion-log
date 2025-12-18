@@ -1,0 +1,10 @@
+<header class="header">
+  <h1 class="logo">🌸 Mindful Blooms</h1>
+
+  {% if user %}
+  <div class="user-box">
+    <span>{{ user.username }} 님, 안녕하세요</span>
+    <a href="/logout">로그아웃</a>
+  </div>
+  {% endif %}
+</header>

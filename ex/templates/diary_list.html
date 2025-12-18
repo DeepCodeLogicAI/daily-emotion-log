@@ -1,0 +1,24 @@
+{% include "header.html" %}
+
+{% if diaries|length == 0 %}
+<div class="empty">
+  아직 작성된 일기가 없어요.<br>
+  첫 일기를 작성해보세요!
+</div>
+{% endif %}
+
+{% for d in diaries %}
+<div class="card">
+  <div class="top">
+    <span>{{ d.diary_date }}</span>
+    <span class="badge">{{ d.emotion }}</span>
+  </div>
+
+  <p>{{ d.content }}</p>
+
+  <div class="ai-box">
+    <h4>✨ AI 마음 가이드</h4>
+    <p>{{ d.analysis }}</p>
+  </div>
+</div>
+{% endfor %}
