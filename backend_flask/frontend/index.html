@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mindful AI</title>
+  <style>
+    :root{
+      --bg:#f5f7fb;
+      --card:#ffffff;
+      --text:#111827;
+      --muted:#6b7280;
+      --border:#e5e7eb;
+      --shadow:0 20px 50px rgba(17,24,39,.08);
+      --primary:#3b82f6;
+      --primary2:#2563eb;
+      --disabled:#cbd5e1;
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--text); background:var(--bg);
+    }
+
+    /* Top bar */
+    .topbar{
+      height:64px; background:#fff; border-bottom:1px solid var(--border);
+      display:flex; align-items:center; justify-content:space-between;
+      padding:0 18px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; font-weight:800;
+      color:#4f46e5;
+    }
+    .logo{
+      width:28px; height:28px; border-radius:10px; background:#ffe4e6;
+      display:grid; place-items:center; border:1px solid #fecdd3;
+      font-size:16px;
+    }
+    .powered{ color:var(--muted); font-size:12px; }
+
+    /* Layout */
+    .wrap{
+      max-width:980px; margin:32px auto; padding:0 18px;
+    }
+    .card{
+      background:var(--card); border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:28px;
+    }
+
+    .hero{
+      text-align:center; margin-bottom:18px;
+    }
+    .hero h1{
+      margin:0; font-size:28px; letter-spacing:-0.3px;
+    }
+    .hero p{
+      margin:8px 0 0; color:var(--muted);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+      margin-top:18px;
+    }
+    @media (max-width: 760px){
+      .grid{ grid-template-columns:1fr; }
+    }
+
+    label{
+      display:block; font-size:13px; color:var(--muted); margin:8px 0 6px;
+    }
+    input, select, textarea{
+      width:100%;
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:12px 12px;
+      font-size:14px;
+      outline:none;
+      background:#fff;
+    }
+    input:focus, select:focus, textarea:focus{
+      border-color:#bfdbfe;
+      box-shadow:0 0 0 4px rgba(59,130,246,.12);
+    }
+    textarea{
+      min-height:180px;
+      resize:vertical;
+      line-height:1.5;
+    }
+
+    .actions{
+      margin-top:16px;
+    }
+    button{
+      width:100%;
+      height:52px;
+      border:none;
+      border-radius:14px;
+      font-weight:800;
+      background:linear-gradient(90deg, var(--primary), var(--primary2));
+      color:#fff;
+      cursor:pointer;
+      font-size:15px;
+    }
+    button:disabled{
+      background:var(--disabled);
+      cursor:not-allowed;
+      color:#475569;
+    }
+
+    .row{
+      display:flex; gap:12px; align-items:center; justify-content:space-between;
+    }
+    .hint{
+      color:var(--muted); font-size:12px; margin-top:10px;
+      display:flex; gap:10px; align-items:center;
+    }
+    .dot{ width:8px; height:8px; border-radius:999px; background:#10b981; display:inline-block; }
+    .dot.bad{ background:#ef4444; }
+
+    /* Result */
+    .result{
+      margin-top:18px;
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:16px;
+      background:#fbfdff;
+      display:none;
+    }
+    .result h3{ margin:0 0 10px; font-size:16px; }
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:#fff;
+      font-size:12px;
+      color:#111827;
+    }
+    .cols{
+      display:grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap:14px;
+      margin-top:12px;
+    }
+    @media (max-width: 900px){
+      .cols{ grid-template-columns:1fr; }
+    }
+    .box{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:14px;
+    }
+    .box h4{ margin:0 0 8px; font-size:13px; color:#374151; }
+    ul{ margin:0; padding-left:18px; color:#374151; }
+    .risk{
+      margin-top:10px;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid #fecaca;
+      background:#fff1f2;
+      color:#991b1b;
+      font-size:13px;
+      display:none;
+    }
+    .error{
+      margin-top:14px;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid #fecaca;
+      background:#fff1f2;
+      color:#991b1b;
+      display:none;
+      white-space:pre-wrap;
+    }
+
+    /* History */
+    .history{
+      margin-top:18px;
+      border-top:1px dashed var(--border);
+      padding-top:18px;
+    }
+    .history-head{
+      display:flex; justify-content:space-between; align-items:center;
+      margin-bottom:10px;
+    }
+    .history-head h3{ margin:0; font-size:15px; }
+    .smallbtn{
+      width:auto; height:36px;
+      padding:0 12px;
+      border-radius:10px;
+      background:#fff;
+      border:1px solid var(--border);
+      color:#111827;
+      font-weight:700;
+    }
+    .list{
+      display:grid; gap:10px;
+    }
+    .item{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:12px;
+    }
+    .item .meta{ color:var(--muted); font-size:12px; display:flex; gap:10px; flex-wrap:wrap; }
+    .item .txt{ margin-top:8px; color:#374151; font-size:13px; line-height:1.45; }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="brand">
+      <div class="logo">🧠</div>
+      <div>Mindful AI</div>
+    </div>
+    <div class="powered">Powered by Gemini</div>
+  </div>
+
+  <div class="wrap">
+    <div class="card">
+      <div class="hero">
+        <h1>오늘의 마음 기록하기</h1>
+        <p>당신의 하루를 솔직하게 적어보세요. AI가 마음을 읽어드립니다.</p>
+      </div>
+
+      <div class="grid">
+        <div>
+          <label for="date">날짜</label>
+          <input id="date" type="date" />
+        </div>
+        <div>
+          <label for="mood">오늘의 기분 (선택)</label>
+          <select id="mood">
+            <option value="">선택 안 함</option>
+            <option>기쁨</option><option>슬픔</option><option>분노</option><option>불안</option>
+            <option>두려움</option><option>혐오</option><option>놀람</option><option>평온</option>
+            <option>피로</option><option>외로움</option><option>죄책감</option><option>무기력</option>
+            <option>만족</option><option>답답함</option>
+          </select>
+        </div>
+      </div>
+
+      <div style="margin-top:12px;">
+        <label for="diary">일기 내용</label>
+        <textarea id="diary" placeholder="오늘 어떤 일이 있었나요? 그때 어떤 기분이 들었나요?"></textarea>
+      </div>
+
+      <div class="actions">
+        <button id="btn" disabled>분석하기</button>
+        <div class="hint">
+          <span id="statusDot" class="dot bad"></span>
+          <span id="statusText">백엔드 연결 확인 중…</span>
+        </div>
+      </div>
+
+      <div id="errorBox" class="error"></div>
+
+      <div id="result" class="result">
+        <div class="row">
+          <h3>분석 결과</h3>
+          <div id="pill" class="pill"></div>
+        </div>
+
+        <div class="cols">
+          <div class="box">
+            <h4>요약</h4>
+            <div id="summary" style="color:#374151; line-height:1.5;"></div>
+
+            <div id="risk" class="risk"></div>
+          </div>
+
+          <div class="box">
+            <h4>지표</h4>
+            <div style="display:flex; flex-wrap:wrap; gap:8px;">
+              <span class="pill" id="valence"></span>
+              <span class="pill" id="arousal"></span>
+              <span class="pill" id="intensity"></span>
+            </div>
+
+            <div style="margin-top:12px;">
+              <h4>근거(키워드)</h4>
+              <ul id="rationale"></ul>
+            </div>
+
+            <div style="margin-top:12px;">
+              <h4>제안</h4>
+              <ul id="suggestions"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="history">
+        <div class="history-head">
+          <h3>최근 기록</h3>
+          <button id="refresh" class="smallbtn">새로고침</button>
+        </div>
+        <div id="list" class="list"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ✅ 본인 백엔드 주소로 수정하세요 (지금은 5002를 기준으로 둠)
+    const API_BASE = "";
+
+    const $ = (id) => document.getElementById(id);
+
+    const dateEl = $("date");
+    const moodEl = $("mood");
+    const diaryEl = $("diary");
+    const btn = $("btn");
+    const errorBox = $("errorBox");
+
+    const statusDot = $("statusDot");
+    const statusText = $("statusText");
+
+    const resultBox = $("result");
+    const pill = $("pill");
+    const summary = $("summary");
+    const valence = $("valence");
+    const arousal = $("arousal");
+    const intensity = $("intensity");
+    const rationale = $("rationale");
+    const suggestions = $("suggestions");
+    const risk = $("risk");
+
+    const list = $("list");
+    const refreshBtn = $("refresh");
+
+    function todayISO(){
+      const d = new Date();
+      const yyyy = d.getFullYear();
+      const mm = String(d.getMonth()+1).padStart(2,'0');
+      const dd = String(d.getDate()).padStart(2,'0');
+      return `${yyyy}-${mm}-${dd}`;
+    }
+
+    dateEl.value = todayISO();
+
+    function setHealth(ok){
+      statusDot.className = "dot" + (ok ? "" : " bad");
+      statusText.textContent = ok ? "백엔드 연결됨" : "백엔드 연결 실패 (서버 실행/포트 확인)";
+      btn.disabled = !ok || diaryEl.value.trim().length === 0;
+    }
+
+    function setError(msg){
+      if(!msg){
+        errorBox.style.display = "none";
+        errorBox.textContent = "";
+        return;
+      }
+      errorBox.style.display = "block";
+      errorBox.textContent = msg;
+    }
+
+    diaryEl.addEventListener("input", () => {
+      btn.disabled = diaryEl.value.trim().length === 0 || statusDot.classList.contains("bad");
+    });
+
+    async function healthCheck(){
+      try{
+        const r = await fetch(`${API_BASE}/health`);
+        setHealth(r.ok);
+      }catch(e){
+        setHealth(false);
+      }
+    }
+
+    function renderResult(data){
+      resultBox.style.display = "block";
+      setError(null);
+
+      const pe = data.PrimaryEmotion || {};
+      pill.textContent = `주감정: ${pe.label || "-"} (신뢰도 ${(pe.confidence ?? 0).toFixed(2)})`;
+
+      summary.textContent = data.Summary || "";
+
+      valence.textContent = `Valence: ${(data.Valence ?? 0).toFixed(2)}`;
+      arousal.textContent = `Arousal: ${(data.Arousal ?? 0).toFixed(2)}`;
+      intensity.textContent = `Intensity: ${data.Intensity ?? 0}`;
+
+      rationale.innerHTML = "";
+      (data.Rationale || []).forEach(x=>{
+        const li = document.createElement("li");
+        li.textContent = x;
+        rationale.appendChild(li);
+      });
+
+      suggestions.innerHTML = "";
+      (data.Suggestions || []).forEach(x=>{
+        const li = document.createElement("li");
+        li.textContent = x;
+        suggestions.appendChild(li);
+      });
+
+      const rf = data.RiskFlag;
+      if(rf && rf.message){
+        risk.style.display = "block";
+        risk.textContent = `[${rf.level}] ${rf.message}`;
+      }else{
+        risk.style.display = "none";
+        risk.textContent = "";
+      }
+    }
+
+    async function analyze(){
+      btn.disabled = true;
+      setError(null);
+      resultBox.style.display = "none";
+
+      const payload = {
+        date: dateEl.value,
+        diaryText: diaryEl.value
+      };
+      if(moodEl.value) payload.selfReportedMood = moodEl.value;
+
+      try{
+        const r = await fetch(`${API_BASE}/analyze`, {
+          method:"POST",
+          headers: { "Content-Type":"application/json" },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await r.json().catch(()=> ({}));
+
+        if(!r.ok){
+          const detail = data.detail ? JSON.stringify(data.detail, null, 2) : "";
+          throw new Error(`${data.error || "요청 실패"}\n${data.detail || ""}\n${detail}`);
+        }
+
+        renderResult(data.analysis ? data.analysis : data); // 백엔드가 row 전체를 주거나 analysis만 줄 때 모두 대응
+        await loadEntries();
+
+      }catch(e){
+        setError(String(e.message || e));
+      }finally{
+        btn.disabled = diaryEl.value.trim().length === 0 || statusDot.classList.contains("bad");
+      }
+    }
+
+    btn.addEventListener("click", analyze);
+
+    function truncate(s, n=120){
+      s = String(s || "");
+      return s.length > n ? s.slice(0, n) + "…" : s;
+    }
+
+    async function loadEntries(){
+      try{
+        const r = await fetch(`${API_BASE}/entries?limit=10`);
+        const rows = await r.json();
+        if(!Array.isArray(rows)) return;
+
+        list.innerHTML = "";
+        rows.forEach(row=>{
+          const item = document.createElement("div");
+          item.className = "item";
+          const pe = row.analysis?.PrimaryEmotion || {};
+          item.innerHTML = `
+            <div class="meta">
+              <span>${row.date || "-"}</span>
+              <span>주감정: <b>${pe.label || "-"}</b></span>
+              ${row.selfReportedMood ? `<span>선택기분: ${row.selfReportedMood}</span>` : ""}
+            </div>
+            <div class="txt">${truncate(row.diaryText, 140)}</div>
+          `;
+          list.appendChild(item);
+        });
+      }catch(e){
+        // 무시(히스토리는 선택 기능)
+      }
+    }
+
+    refreshBtn.addEventListener("click", loadEntries);
+
+    // init
+    healthCheck();
+    loadEntries();
+  </script>
+</body>
+</html>
