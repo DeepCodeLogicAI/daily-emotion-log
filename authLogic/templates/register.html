@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="card">
+        <div class="logo">❤</div>
+        <h2>회원가입</h2>
+        <div class="sub">감정 기록을 시작해보세요</div>
+
+        <form method="post">
+            <input name="username" placeholder="아이디" required>
+            <input name="password" type="password" placeholder="비밀번호" required>
+            <button type="submit">가입하기</button>
+        </form>
+
+        <div class="link">
+            <a href="/login">로그인으로 돌아가기</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
