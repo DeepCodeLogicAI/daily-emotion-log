@@ -1,5 +1,3 @@
-# 메인 Flask 앱 (중앙 허브)
-
 import os
 import sys
 
@@ -15,13 +13,15 @@ from datetime import datetime
 import json
 from db import get_connection
 from emotion import EmotionAnalyzer
+import atexit
 
 # 어떤 파일들이 로드되었는지 확인
 print(f"db 모듈 위치: {get_connection.__module__}")
 print(f"EmotionAnalyzer 모듈 위치: {EmotionAnalyzer.__module__}")
 
-app = Flask(__name__)
+app = Flask(__name__)   # Flask 앱 초기화
 app.secret_key = 'your-secret-key-change-this-in-production'  # 세션을 위한 시크릿 키
+# atexit.register(get_connection.close)
 
 # 사용자 테이블 생성 함수
 def init_users_table():

@@ -4,7 +4,7 @@ def get_connection():
     conn = pymysql.connect(
         host="localhost",
         user="root",
-        password="9850",
+        password="1111",
         database="emotion_db",
         cursorclass=pymysql.cursors.DictCursor
     )
