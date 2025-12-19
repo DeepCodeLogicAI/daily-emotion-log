@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일기 작성 - MindDiary AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+{% include "header.html" %}
+
+<div class="card">
+  <div style="text-align: center; margin-bottom: 40px;">
+    <h3 style="font-size: 22px; margin:0 0 8px 0;">✍️ 마음의 조각 적기</h3>
+    <p class="sub" style="margin-bottom:0;">오늘 당신에게 있었던 소중한 순간들을 들려주세요.</p>
+  </div>
+
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <div class="flash-message">
+        {% for message in messages %}
+          <p>{{ message }}</p>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+  <form method="post">
+    <div class="form-group">
+      <label>📅 날짜</label>
+      <input type="date" name="diary_date" value="{{ today }}" required>
+    </div>
+
+    <div class="form-group">
+      <label>💭 오늘의 이야기</label>
+      <textarea name="content" placeholder="이곳은 당신만을 위한 공간이에요. 편하게 적어주세요..." required></textarea>
+    </div>
+
+    <div class="btn-row">
+      <a href="/diary/list" class="btn cancel">이전으로</a>
+      <button type="submit" class="submit">기록하고 AI 분석 받기 ✨</button>
+    </div>
+  </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인 - MindDiary AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="card" style="margin-top: 80px;">
+        <div style="text-align: center; font-size: 40px; margin-bottom: 16px;">💖</div>
+        <h2>다시 만나서 반가워요</h2>
+        <div class="sub">오늘의 기록을 위해 로그인해 주세요</div>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="flash-message">
+                    {% for message in messages %}
+                        <p>{{ message }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <form method="post" action="/login">
+            <div class="form-group">
+                <label>아이디</label>
+                <input type="text" name="username" placeholder="Your ID" required>
+            </div>
+            <div class="form-group">
+                <label>비밀번호</label>
+                <input name="password" type="password" placeholder="••••••••" required>
+            </div>
+            <button type="submit" class="submit">시작하기</button>
+        </form>
+
+        <div class="link">
+            <a href="/register">계정이 없으신가요? 회원가입 하러가기</a>
+        </div>
+    </div>
+</body>
+</html>

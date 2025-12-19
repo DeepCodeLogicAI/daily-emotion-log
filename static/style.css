@@ -1,0 +1,286 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: #FFF9FB;
+  font-family: 'Noto Sans KR', sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  color: #334155;
+  line-height: 1.6;
+}
+
+/* Header */
+.header {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #fce7eb;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  color: #fb7185;
+  font-weight: 700;
+  font-size: 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.user-box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.user-box span {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.user-box a {
+  color: #fb7185;
+  text-decoration: none;
+  font-size: 13px;
+  padding: 6px 14px;
+  border: 1px solid #fb7185;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+}
+
+.user-box a:hover {
+  background: #fb7185;
+  color: white;
+}
+
+/* Cards */
+.card {
+  background: white;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 40px;
+  border-radius: 32px;
+  box-shadow: 0 10px 40px rgba(251, 113, 133, 0.08);
+  border: 1px solid #fff1f2;
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+  text-align: center;
+  color: #1e293b;
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 0;
+}
+
+.sub {
+  color: #94a3b8;
+  font-size: 14px;
+  margin: 8px 0 32px 0;
+  text-align: center;
+}
+
+/* Forms */
+.form-group {
+  margin-bottom: 24px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #475569;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+textarea {
+  width: 100%;
+  padding: 14px 18px;
+  background: #f8fafc;
+  border: 1px solid #f1f5f9;
+  border-radius: 16px;
+  font-size: 15px;
+  color: #334155;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  background: white;
+  border-color: #fb7185;
+  box-shadow: 0 0 0 4px rgba(251, 113, 133, 0.05);
+}
+
+textarea {
+  min-height: 200px;
+  resize: vertical;
+}
+
+/* Buttons */
+.btn-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+button, .btn {
+  flex: 1;
+  padding: 16px;
+  border-radius: 16px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  text-align: center;
+  text-decoration: none;
+}
+
+.submit {
+  background: #fb7185;
+  color: white;
+  box-shadow: 0 4px 14px rgba(251, 113, 133, 0.3);
+}
+
+.submit:hover {
+  background: #f43f5e;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(251, 113, 133, 0.4);
+}
+
+.cancel {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+.cancel:hover {
+  background: #e2e8f0;
+  color: #475569;
+}
+
+/* Diary Items */
+.diary-item {
+  margin-bottom: 24px;
+}
+
+.diary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.date-badge {
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.emotion-badge {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.emotion-행복 { background: #fffbeb; color: #d97706; }
+.emotion-보통 { background: #f0f9ff; color: #0284c7; }
+.emotion-우울 { background: #eef2ff; color: #4f46e5; }
+.emotion-분노 { background: #fef2f2; color: #dc2626; }
+
+.diary-content {
+  background: #fafafa;
+  padding: 24px;
+  border-radius: 20px;
+  color: #475569;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.ai-box {
+  background: #fff1f2;
+  padding: 24px;
+  border-radius: 20px;
+  border-left: 4px solid #fb7185;
+}
+
+.ai-box h4 {
+  margin: 0 0 12px 0;
+  color: #fb7185;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.summary-text {
+  font-size: 15px;
+  color: #334155;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Landing Page */
+.landing-logo {
+  font-size: 64px;
+  margin-bottom: 24px;
+}
+
+.empty-card {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.empty-icon {
+  font-size: 50px;
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+
+.flash-message {
+  background: #fef2f2;
+  color: #f43f5e;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 13px;
+  margin-bottom: 20px;
+  border: 1px solid #fee2e2;
+  text-align: center;
+}
+
+.link {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.link a {
+  color: #94a3b8;
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.link a:hover {
+  color: #fb7185;
+  text-decoration: underline;
+}

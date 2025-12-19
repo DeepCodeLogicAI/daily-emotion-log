@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>분석 결과 - MindDiary AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+{% include "header.html" %}
+
+<div class="card" style="text-align: center;">
+  <div style="font-size: 40px; margin-bottom: 20px;">✨</div>
+  <h2>마음 분석 결과</h2>
+  <div class="sub">AI가 당신의 문장들 사이에서 감정을 찾아냈어요.</div>
+  
+  <div style="background: #f8fafc; border-radius: 24px; padding: 24px; margin: 32px 0;">
+    <div style="font-size: 13px; color: #94a3b8; margin-bottom: 8px;">{{ diary_date }}</div>
+    <div style="display: inline-block;" class="emotion-badge emotion-{{ emotion }}">{{ emotion }}</div>
+  </div>
+
+  {% if analysis %}
+  <div class="ai-box" style="text-align: left; border: none; background: #FFF9FB; border: 1px solid #fff1f2;">
+    <h4 style="text-align: center; margin-bottom: 20px;">✨ 오늘의 감정 요약</h4>
+    <p class="summary-text" style="line-height: 2; text-align: center; font-size: 17px; font-weight: 500;">
+      "{{ analysis.summary }}"
+    </p>
+  </div>
+  {% else %}
+  <div class="ai-box">
+    <p style="text-align: center;">오늘의 전반적인 감정은 <b>{{ emotion }}</b> 상태인 것으로 보여요.</p>
+  </div>
+  {% endif %}
+
+  <div class="btn-row">
+    <a href="/diary" class="btn cancel">다시 쓰기</a>
+    <a href="/diary/list" class="btn submit">전체 목록 보기</a>
+  </div>
+</div>
+
+</body>
+</html>
