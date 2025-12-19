@@ -202,9 +202,9 @@ button,
 }
 
 .date-badge {
-  color: #94a3b8;
+  color: #545b64;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 800; /*  강혜정 수정 500 -> 800 */
 }
 
 .emotion-badge {
@@ -307,15 +307,4 @@ button,
 .link a:hover {
   color: #fb7185;
   text-decoration: underline;
-}
-
-/* 회원가입/로그인 입력칸 간격 강제 (form-group이 없어도 적용되게) */
-form input[type="text"],
-form input[type="password"] {
-  margin-bottom: 14px;
-}
-
-form input[type="password"]:last-of-type,
-form input[type="text"]:last-of-type {
-  margin-bottom: 0;
 }
