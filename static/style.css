@@ -308,3 +308,15 @@ button,
   color: #fb7185;
   text-decoration: underline;
 }
+
+/* 회원가입/로그인 입력칸 간격 강제 (form-group이 없어도 적용되게) */
+form input[type="text"],
+form input[type="password"] {
+  margin-bottom: 14px;
+}
+
+/* 마지막 input은 여백 제거(선택) */
+form input[type="password"]:last-of-type,
+form input[type="text"]:last-of-type {
+  margin-bottom: 0;
+}
