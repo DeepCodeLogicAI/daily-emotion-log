@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내 마음 보관함 - MindDiary AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+{% include "header.html" %}
+
+<div class="card" style="background: transparent; box-shadow: none; border: none; padding: 0 20px;">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+    <h2 style="text-align: left; margin: 0;">📔 내 마음 보관함</h2>
+    <a href="/diary" class="btn submit" style="flex: none; padding: 10px 20px; font-size: 14px;">✍️ 새 글 쓰기</a>
+  </div>
+</div>
+
+{% if diaries|length == 0 %}
+<div class="card empty-card">
+  <div class="empty-icon">🍂</div>
+  <p style="color: #94a3b8; font-size: 15px;">아직 기록된 마음이 없네요.<br>첫 번째 이야기를 시작해볼까요?</p>
+  <div style="margin-top: 24px;">
+    <a href="/diary" class="btn submit" style="max-width: 200px; display: inline-block;">일기 작성하기</a>
+  </div>
+</div>
+{% else %}
+  {% for d in diaries %}
+  <div class="card diary-item">
+    <div class="diary-header">
+      <span class="date-badge">{{ d.diary_date }}</span>
+      <span class="emotion-badge emotion-{{ d.emotion }}">{{ d.emotion }}</span>
+    </div>
+
+    <div class="diary-content">
+      <p style="margin:0; white-space: pre-wrap;">{{ d.content }}</p>
+    </div>
+
+    {% if d.analysis %}
+    <div class="ai-box">
+      <h4>✨ AI가 보내는 따뜻한 메시지</h4>
+      <p class="summary-text">"{{ d.analysis.summary }}"</p>
+    </div>
+    {% endif %}
+  </div>
+  {% endfor %}
+{% endif %}
+
+<div style="height: 60px;"></div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+
+<header class="header">
+  <a href="/" class="logo">MindDiary AI</a>
+
+  {% if user %}
+  <div class="user-box">
+    <span><b>{{ user.username }}</b> 님</span>
+    <a href="/logout">로그아웃</a>
+  </div>
+  {% else %}
+  <div class="user-box">
+    <a href="/login" style="border:none; color:#94a3b8;">로그인</a>
+  </div>
+  {% endif %}
+</header>
