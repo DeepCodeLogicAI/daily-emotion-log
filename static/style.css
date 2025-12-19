@@ -315,7 +315,6 @@ form input[type="password"] {
   margin-bottom: 14px;
 }
 
-/* 마지막 input은 여백 제거(선택) */
 form input[type="password"]:last-of-type,
 form input[type="text"]:last-of-type {
   margin-bottom: 0;
