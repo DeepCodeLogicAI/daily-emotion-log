@@ -2,10 +2,14 @@
 import google.generativeai as genai
 import json
 import os
+from dotenv import load_dotenv
+
+# .env 파일 로드
+load_dotenv()
 
 # 🔐 API KEY 설정
 # 환경 변수에서 먼저 확인하고, 없으면 직접 설정된 키 사용
-api_key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY") or "AIzaSyCdLQ2q7HD5cFqHD9DHvHwM4nqPkQm7WkE"
+api_key = os.getenv("GEMINI_API_KEY")
 
 if api_key and api_key != "YOUR_API_KEY":
     try:
