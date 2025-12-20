@@ -71,7 +71,7 @@ def login():
             if user and check_password_hash(user['password'], password):
                 session['user_id'] = user['id']
                 session['username'] = user['username']
-                flash("로그인 성공!")
+                # flash("로그인 성공!")
                 return redirect(url_for("diary_list"))
             else:
                 flash("아이디 또는 비밀번호가 올바르지 않습니다.")
@@ -130,7 +130,7 @@ def register():
 @app.route("/logout")
 def logout():
     session.clear()
-    flash("로그아웃되었습니다.")
+    # flash("로그아웃되었습니다.")
     return redirect(url_for("index"))
 
 # 일기 목록 보기

@@ -12,7 +12,7 @@
 
 <div class="card">
   <div style="text-align: center; margin-bottom: 40px;">
-    <h3 style="font-size: 22px; margin:0 0 8px 0;">✍️ 마음의 조각 적기</h3>
+    <h3 style="font-size: 22px; margin:0 0 8px 0;">마음의 조각 적기</h3>
     <p class="sub" style="margin-bottom:0;">오늘 당신에게 있었던 소중한 순간들을 들려주세요.</p>
   </div>
 
@@ -28,18 +28,19 @@
 
   <form method="post">
     <div class="form-group">
-      <label>📅 날짜</label>
+      <label>날짜</label>
       <input type="date" name="diary_date" value="{{ today }}" required>
     </div>
 
     <div class="form-group">
-      <label>💭 오늘의 이야기</label>
+      <label>오늘의 이야기</label>
       <textarea name="content" placeholder="이곳은 당신만을 위한 공간이에요. 편하게 적어주세요..." required></textarea>
     </div>
 
     <div class="btn-row">
       <a href="/diary/list" class="btn cancel">이전으로</a>
-      <button type="submit" class="submit">기록하고 AI 분석 받기 ✨</button>
+      <button type="submit" class="submit">
+        기록하고 AI 분석 받기</button>
     </div>
   </form>
 </div>
