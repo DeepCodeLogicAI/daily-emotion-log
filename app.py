@@ -163,13 +163,28 @@ def diary_list():
                     diary['analysis'] = parsed
                 except:
                     diary['analysis'] = None
+        
+        # 최근 5일의 emotion_score 데이터 가져오기
+        cur.execute("""
+            SELECT diary_date, emotion_score, emotion
+            FROM diaries 
+            WHERE user_id = %s 
+            ORDER BY diary_date DESC
+            LIMIT 5
+        """, (session['user_id'],))
+        recent_scores = cur.fetchall()
+        
+        # 날짜 순서대로 정렬 (오래된 것부터)
+        recent_scores = sorted(recent_scores, key=lambda x: x['diary_date'])
+        
     except Exception as e:
         print(f"일기 목록 조회 오류: {e}")
         diaries = []
+        recent_scores = []
     finally:
         conn.close()
     
-    return render_template("diary_list.html", diaries=diaries, user={'username': session.get('username')})
+    return render_template("diary_list.html", diaries=diaries, recent_scores=recent_scores, user={'username': session.get('username')})
 
 # 일기 작성 및 AI 분석
 @app.route("/diary", methods=["GET", "POST"])
