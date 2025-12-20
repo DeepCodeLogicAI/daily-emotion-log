@@ -13,14 +13,18 @@
 
 <div class="card" style="background: transparent; box-shadow: none; border: none; padding: 0 20px;">
   <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
-    <h2 style="text-align: left; margin: 0;">📔 내 마음 보관함</h2>
-    <a href="/diary" class="btn submit" style="flex: none; padding: 10px 20px; font-size: 14px;">✍️ 새 글 쓰기</a>
+    <h2 style="display: flex; align-items: center; text-align: left; margin: 0;">
+      <img src="{{ url_for('static', filename='list.png') }}" alt="List" style="width: 15%; height: auto;"/>
+      내 마음 보관함</h2>
+    <a href="/diary" class="btn submit" style="flex: none; padding: 10px 20px; font-size: 14px;">새 글 쓰기</a>
   </div>
 </div>
 
 {% if recent_scores|length > 0 %}
 <div class="card">
-  <h3 style="text-align: center; color: #1e293b; font-size: 18px; font-weight: 700; margin-top: 0; margin-bottom: 24px;">📊 최근 5일 감정 변화</h3>
+  <h3 style="display: flex; align-items: center; justify-content: center; color: #1e293b; font-size: 18px; font-weight: 700; margin-top: 0; margin-bottom: 24px;">
+    <img src="{{ url_for('static', filename='graph.jpg') }}" alt="graph" style="width: 10%; height: auto; "/>
+    최근 5일 감정 변화</h3>
   <canvas id="emotionChart" style="max-height: 300px;"></canvas>
 </div>
 {% endif %}
@@ -47,7 +51,9 @@
 
     {% if d.analysis %}
     <div class="ai-box">
-      <h4>✨ AI가 보내는 따뜻한 메시지</h4>
+      <h4 style="display: flex; align-items: center; justify-content: left;">
+        <img src="{{ url_for('static', filename='ai2.png') }}" alt="Heart" style="width: 5%; height: auto;"/>
+        AI가 보내는 따뜻한 메시지</h4>
       <p class="summary-text">"{{ d.analysis.summary }}"</p>
     </div>
     {% endif %}
@@ -90,14 +96,14 @@
       datasets: [{
         label: '감정 점수',
         data: scores,
-        borderColor: '#fb7185',
-        backgroundColor: 'rgba(251, 113, 133, 0.1)',
+        borderColor: '#4f46e5',
+        backgroundColor: 'rgba(79, 70, 229, 0.1)',
         borderWidth: 3,
         fill: true,
         tension: 0.4,
         pointRadius: 6,
         pointHoverRadius: 8,
-        pointBackgroundColor: '#fb7185',
+        pointBackgroundColor: '#4f46e5',
         pointBorderColor: '#fff',
         pointBorderWidth: 2
       }]
@@ -134,7 +140,7 @@
           bodyFont: {
             size: 13
           },
-          cornerRadius: 8
+          cornerRadius: 2
         }
       },
       scales: {

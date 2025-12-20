@@ -6,37 +6,42 @@
 }
 
 body {
-  background: #FFF9FB;
+  background: #f8fafc;
   font-family: 'Noto Sans KR', sans-serif;
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  color: #334155;
+  color: #1e293b;
   line-height: 1.6;
 }
 
 /* Header */
 .header {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(10px);
+  background: #ffffff;
   padding: 16px 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #fce7eb;
+  border-bottom: 2px solid #e2e8f0;
   position: sticky;
   top: 0;
   z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
 }
 
 .logo {
-  color: #fb7185;
+  color: #4f46e5;
   font-weight: 700;
   font-size: 20px;
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: 8px;
+  transition: color 0.3s ease;
+}
+
+.logo:hover {
+  color: #6366f1;
 }
 
 .user-box {
@@ -51,17 +56,17 @@ body {
 }
 
 .user-box a {
-  color: #fb7185;
+  color: #4f46e5;
   text-decoration: none;
   font-size: 13px;
   padding: 6px 14px;
-  border: 1px solid #fb7185;
-  border-radius: 999px;
-  transition: all 0.3s ease;
+  border: 2px solid #4f46e5;
+  border-radius: 4px;
+  transition: all 0.2s ease;
 }
 
 .user-box a:hover {
-  background: #fb7185;
+  background: #4f46e5;
   color: white;
 }
 
@@ -71,21 +76,19 @@ body {
   max-width: 600px;
   margin: 40px auto;
   padding: 40px;
-  border-radius: 32px;
-  box-shadow: 0 10px 40px rgba(251, 113, 133, 0.08);
-  border: 1px solid #fff1f2;
-  animation: fadeIn 0.6s ease-out;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.12);
+  border: 1px solid #e2e8f0;
+  animation: fadeIn 0.4s ease-out;
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(10px);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
@@ -122,13 +125,13 @@ input[type="password"],
 input[type="date"],
 textarea {
   width: 100%;
-  padding: 14px 18px;
-  background: #f8fafc;
-  border: 1px solid #f1f5f9;
-  border-radius: 16px;
+  padding: 12px 16px;
+  background: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 4px;
   font-size: 15px;
   color: #334155;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   font-family: inherit;
 }
 
@@ -136,8 +139,8 @@ input:focus,
 textarea:focus {
   outline: none;
   background: white;
-  border-color: #fb7185;
-  box-shadow: 0 0 0 4px rgba(251, 113, 133, 0.05);
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.1);
 }
 
 textarea {
@@ -155,28 +158,27 @@ textarea {
 button,
 .btn {
   flex: 1;
-  padding: 16px;
+  padding: 14px 20px;
   margin-top: 10px;
-  border-radius: 16px;
+  border-radius: 4px;
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.2s ease;
   border: none;
   text-align: center;
   text-decoration: none;
 }
 
 .submit {
-  background: #fb7185;
+  background: #4f46e5;
   color: white;
-  box-shadow: 0 4px 14px rgba(251, 113, 133, 0.3);
+  box-shadow: 0 2px 4px rgba(79, 70, 229, 0.2);
 }
 
 .submit:hover {
-  background: #f43f5e;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(251, 113, 133, 0.4);
+  background: #4338ca;
+  box-shadow: 0 4px 8px rgba(79, 70, 229, 0.3);
 }
 
 .cancel {
@@ -202,57 +204,64 @@ button,
 }
 
 .date-badge {
-  color: #545b64;
+  color: #64748b;
   font-size: 13px;
-  font-weight: 800; /*  강혜정 수정 500 -> 800 */
+  font-weight: 600;
+  letter-spacing: 0.3px;
 }
 
 .emotion-badge {
-  padding: 6px 14px;
-  border-radius: 999px;
+  padding: 6px 12px;
+  border-radius: 4px;
   font-size: 12px;
   font-weight: 700;
 }
 
 .emotion-행복 {
-  background: #fffbeb;
-  color: #d97706;
+  background: #fef3c7;
+  color: #92400e;
+  border: 2px solid #fcd34d;
 }
 
 .emotion-보통 {
-  background: #f0f9ff;
-  color: #0284c7;
+  background: #dbeafe;
+  color: #1e40af;
+  border: 2px solid #93c5fd;
 }
 
 .emotion-우울 {
-  background: #eef2ff;
-  color: #4f46e5;
+  background: #e0e7ff;
+  color: #3730a3;
+  border: 2px solid #a5b4fc;
 }
 
 .emotion-분노 {
-  background: #fef2f2;
-  color: #dc2626;
+  background: #fee2e2;
+  color: #991b1b;
+  border: 2px solid #fca5a5;
 }
 
 .diary-content {
-  background: #fafafa;
-  padding: 24px;
-  border-radius: 20px;
+  background: #f8fafc;
+  padding: 20px;
+  border-radius: 4px;
   color: #475569;
   font-size: 15px;
   margin-bottom: 20px;
+  border: 1px solid #e2e8f0;
 }
 
 .ai-box {
-  background: #fff1f2;
-  padding: 24px;
-  border-radius: 20px;
-  border-left: 4px solid #fb7185;
+  background: #eef2ff;
+  padding: 20px;
+  border-radius: 4px;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #4f46e5;
 }
 
 .ai-box h4 {
   margin: 0 0 12px 0;
-  color: #fb7185;
+  color: #4f46e5;
   font-size: 14px;
   font-weight: 700;
 }
@@ -261,7 +270,6 @@ button,
   font-size: 15px;
   color: #334155;
   margin: 0;
-  font-style: italic;
 }
 
 /* Landing Page */
@@ -283,12 +291,12 @@ button,
 
 .flash-message {
   background: #fef2f2;
-  color: #f43f5e;
+  color: #dc2626;
   padding: 14px;
-  border-radius: 12px;
+  border-radius: 4px;
   font-size: 13px;
   margin-bottom: 20px;
-  border: 1px solid #fee2e2;
+  border: 2px solid #fecaca;
   text-align: center;
 }
 
@@ -305,6 +313,6 @@ button,
 }
 
 .link a:hover {
-  color: #fb7185;
+  color: #4f46e5;
   text-decoration: underline;
 }

@@ -11,18 +11,18 @@
 {% include "header.html" %}
 
 <div class="card" style="text-align: center;">
-  <div style="font-size: 40px; margin-bottom: 20px;">✨</div>
+  <img src="{{ url_for('static', filename='ai.jpg') }}" alt="Heart" style="display: block; width: 20%; margin: 0 auto;"/>
   <h2>마음 분석 결과</h2>
   <div class="sub">AI가 당신의 문장들 사이에서 감정을 찾아냈어요.</div>
   
-  <div style="background: #f8fafc; border-radius: 24px; padding: 24px; margin: 32px 0;">
+  <div style="background: #f8fafc; border-radius: 4px; padding: 20px; margin: 32px 0; border: 1px solid #e2e8f0;">
     <div style="font-size: 13px; color: #94a3b8; margin-bottom: 8px;">{{ diary_date }}</div>
     <div style="display: inline-block;" class="emotion-badge emotion-{{ emotion }}">{{ emotion }}</div>
   </div>
 
   {% if analysis %}
-  <div class="ai-box" style="text-align: left; border: none; background: #FFF9FB; border: 1px solid #fff1f2;">
-    <h4 style="text-align: center; margin-bottom: 20px;">✨ 오늘의 감정 요약</h4>
+  <div class="ai-box" style="text-align: left; border: 1px solid #e2e8f0; background: #eef2ff;">
+    <h4 style="text-align: center; margin-bottom: 20px;">오늘의 감정 요약</h4>
     <p class="summary-text" style="line-height: 2; text-align: center; font-size: 17px; font-weight: 500;">
       {{ analysis.summary }}
     </p>
