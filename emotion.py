@@ -156,7 +156,8 @@ Respond in JSON format only:
                 print(f"⚠️ API 키 인증 오류 감지: {error_str}")
                 return {
                     "mood": "Neutral",
-                    "summary": f"API 키 인증 오류가 발생했습니다. API 키를 확인해주세요. (오류: {error_str[:100]})"
+                    "summary":"일시적으로 감정 분석 기능을 사용할 수 없습니다. 잠시 후 다시 시도해 주세요."
+                    # "summary": f"API 키 인증 오류가 발생했습니다. API 키를 확인해주세요. (오류: {error_str[:100]})"
                 }
             
             # 네트워크 오류
