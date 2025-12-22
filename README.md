@@ -5,54 +5,6 @@
 
 ---
 
-## 👥 Team 5조
-<table>
-  <tr>
-    <td align="center" width="180">
-      <img src="https://github.com/eeeunhey.png?size=120" width="120" height="120" />
-      <br />
-      <b>김은혜</b><br/>
-      <sub>PM / Full-stack</sub><br/>
-      <a href="https://github.com/eeeunhey">@eeeunhey</a>
-    </td>
-
-    <td align="center" width="180">
-      <img src="https://github.com/hj626.png?size=120" width="120" height="120" />
-      <br />
-      <b>강혜정</b><br/>
-      <sub>Full-stack</sub><br/>
-      <a href="https://github.com/hj626">@hj626</a>
-    </td>
-
-    <td align="center" width="180">
-      <img src="https://github.com/waguwagu796.png?size=120" width="120" height="120" />
-      <br />
-      <b>김재혁</b><br/>
-      <sub>Full-stack</sub><br/>
-      <a href="https://github.com/waguwagu796">@waguwagu796</a>
-    </td>
-
-    <td align="center" width="180">
-      <img src="https://github.com/timothykr7-jpg.png?size=120" width="120" height="120" />
-      <br />
-      <b>나상훈</b><br/>
-      <sub>Full-stack</sub><br/>
-      <a href="https://github.com/timothykr7-jpg">@timothykr7-jpg</a>
-    </td>
-
-    <td align="center" width="180">
-      <img src="https://github.com/1st312.png?size=120" width="120" height="120" />
-      <br />
-      <b>임다빈</b><br/>
-      <sub>Full-stack</sub><br/>
-      <a href="https://github.com/1st312">@1st312</a>
-    </td>
-  </tr>
-</table>
-
-
----
-
 ## ✨ 프로젝트 소개
 
 **Emotionary AI**는 사용자가 작성한 일기 내용을 바탕으로  
@@ -71,6 +23,35 @@ AI가 감정을 분석하고, 감정 요약과 코멘트를 제공하는 웹 서
 - 글 기반 감정 분석을 통해 더 자연스러운 기록 경험 제공
 
 ---
+## 🛠 기술 스택
+
+<a href="https://github.com/msdio/stackticon">
+  <img src="https://firebasestorage.googleapis.com/v0/b/stackticon-81399.appspot.com/o/images%2F1766363369466?alt=media&token=71524347-26c6-4354-99d3-7dfce046bb67" alt="stackticon" />
+</a>
+
+- **Frontend**: HTML, CSS, JavaScript  
+- **Backend**: Flask (Python)  
+- **Database**: MariaDB  
+- **AI**: Google Gemini API  
+- **Deploy**: Cloudtype  
+- **Collaboration**: GitHub, Git  
+
+---
+## 📁 프로젝트 구조
+
+```
+daily-emotion-log_team/
+ ├─ static/        # 이미지, CSS
+ ├─ templates/     # HTML 템플릿
+ ├─ app.py         # Flask 앱 실행
+ ├─ db.py          # DB 연결
+ ├─ emotion.py     # 감정 분석 로직
+ ├─ .env           # 환경 변수
+ └─ README.md
+```
+
+---
+
 
 ## 🧩 주요 기능
 
@@ -106,38 +87,10 @@ AI가 감정을 분석하고, 감정 요약과 코멘트를 제공하는 웹 서
 ![결과 페이지](gif/결과%20페이지.gif)
 
 ## 🎥 전체 시연 영상
-[![Emotionary AI Demo](thumbnail.png)](video/emotionary_demo.mp4)
+[▶️ Emotionary AI 전체 시연 영상 보기](video/emotionary_demo.mp4)
 ---
 
-## 📁 프로젝트 구조
 
-```
-daily-emotion-log_team/
- ├─ static/        # 이미지, CSS
- ├─ templates/     # HTML 템플릿
- ├─ app.py         # Flask 앱 실행
- ├─ db.py          # DB 연결
- ├─ emotion.py     # 감정 분석 로직
- ├─ .env           # 환경 변수
- └─ README.md
-```
-
----
-
-## 🛠 기술 스택
-
-<a href="https://github.com/msdio/stackticon">
-  <img src="https://firebasestorage.googleapis.com/v0/b/stackticon-81399.appspot.com/o/images%2F1766363369466?alt=media&token=71524347-26c6-4354-99d3-7dfce046bb67" alt="stackticon" />
-</a>
-
-- **Frontend**: HTML, CSS, JavaScript  
-- **Backend**: Flask (Python)  
-- **Database**: MariaDB  
-- **AI**: Google Gemini API  
-- **Deploy**: Cloudtype  
-- **Collaboration**: GitHub, Git  
-
----
 
 ## 🌱 프로젝트 회고
 
@@ -155,4 +108,56 @@ daily-emotion-log_team/
 - UI/UX 및 코드 구조 리팩토링
 
 ---
+
+👥 Team 5조
+
+<table>
+<tr>
+<td align="center" width="180">
+<a href="https://github.com/eeeunhey">
+<img src="https://github.com/eeeunhey.png?size=120" width="120" height="120" alt="김은혜" />
+</a><br/>
+<b>김은혜</b><br/>
+<sub>PM / Full-stack</sub><br/>
+<a href="https://github.com/eeeunhey">@eeeunhey</a>
+</td>
+
+<td align="center" width="180">
+<a href="https://github.com/hj626">
+<img src="https://github.com/hj626.png?size=120" width="120" height="120" alt="강혜정" />
+</a><br/>
+<b>PL / 강혜정</b><br/>
+<sub>Full-stack</sub><br/>
+<a href="https://github.com/hj626">@hj626</a>
+</td>
+
+<td align="center" width="180">
+<a href="https://github.com/waguwagu796">
+<img src="https://github.com/waguwagu796.png?size=120" width="120" height="120" alt="김재혁" />
+</a><br/>
+<b>김재혁</b><br/>
+<sub>Full-stack</sub><br/>
+<a href="https://github.com/waguwagu796">@waguwagu796</a>
+</td>
+
+<td align="center" width="180">
+<a href="https://github.com/timothykr7-jpg">
+<img src="https://github.com/timothykr7-jpg.png?size=120" width="120" height="120" alt="나상훈" />
+</a><br/>
+<b>나상훈</b><br/>
+<sub>Full-stack</sub><br/>
+<a href="https://github.com/timothykr7-jpg">@timothykr7-jpg</a>
+</td>
+
+<td align="center" width="180">
+<a href="https://github.com/1st312">
+<img src="https://github.com/1st312.png?size=120" width="120" height="120" alt="임다빈" />
+</a><br/>
+<b>임다빈</b><br/>
+<sub>Full-stack</sub><br/>
+<a href="https://github.com/1st312">@1st312</a>
+</td>
+</tr>
+</table>
+
 
