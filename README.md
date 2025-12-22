@@ -9,42 +9,47 @@
 <table>
   <tr>
     <td align="center" width="180">
-      <img src="https://github.com/eeeunhey.png?size=120" width="120" height="120" style="border-radius:12px;" />
+      <img src="https://github.com/eeeunhey.png?size=120" width="120" height="120" />
       <br />
       <b>김은혜</b><br/>
       <sub>PM / Full-stack</sub><br/>
       <a href="https://github.com/eeeunhey">@eeeunhey</a>
     </td>
+
     <td align="center" width="180">
-      <img src="https://github.com/timothyk7-jpg.png?size=120" width="120" height="120" style="border-radius:12px;" />
+      <img src="https://github.com/hj626.png?size=120" width="120" height="120" />
       <br />
       <b>강혜정</b><br/>
       <sub>Full-stack</sub><br/>
-      <a href="https://github.com/timothyk7-jpg">@timothyk7-jpg</a>
+      <a href="https://github.com/hj626">@hj626</a>
     </td>
+
     <td align="center" width="180">
-      <img src="https://github.com/hj626.png?size=120" width="120" height="120" style="border-radius:12px;" />
+      <img src="https://github.com/waguwagu796.png?size=120" width="120" height="120" />
       <br />
       <b>김재혁</b><br/>
       <sub>Full-stack</sub><br/>
-      <a href="https://github.com/hj626">@hj626</a>
+      <a href="https://github.com/waguwagu796">@waguwagu796</a>
     </td>
+
     <td align="center" width="180">
-      <img src="https://github.com/1st312.png?size=120" width="120" height="120" style="border-radius:12px;" />
+      <img src="https://github.com/timothykr7-jpg.png?size=120" width="120" height="120" />
       <br />
       <b>나상훈</b><br/>
       <sub>Full-stack</sub><br/>
-      <a href="https://github.com/1st312">@1st312</a>
+      <a href="https://github.com/timothykr7-jpg">@timothykr7-jpg</a>
     </td>
+
     <td align="center" width="180">
-      <img src="https://github.com/waguwagu796.png?size=120" width="120" height="120" style="border-radius:12px;" />
+      <img src="https://github.com/1st312.png?size=120" width="120" height="120" />
       <br />
       <b>임다빈</b><br/>
       <sub>Full-stack</sub><br/>
-      <a href="https://github.com/waguwagu796">@waguwagu796</a>
+      <a href="https://github.com/1st312">@1st312</a>
     </td>
   </tr>
 </table>
+
 
 ---
 
