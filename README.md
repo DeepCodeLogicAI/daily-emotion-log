@@ -6,7 +6,45 @@
 ---
 
 ## 👥 Team 5조
-강혜정 · 김재혁 · 임다빈 · 나상훈 · 김은혜
+<table>
+  <tr>
+    <td align="center" width="180">
+      <img src="https://github.com/eeeunhey.png?size=120" width="120" height="120" style="border-radius:12px;" />
+      <br />
+      <b>김은혜</b><br/>
+      <sub>PM / Full-stack</sub><br/>
+      <a href="https://github.com/eeeunhey">@eeeunhey</a>
+    </td>
+    <td align="center" width="180">
+      <img src="https://github.com/timothyk7-jpg.png?size=120" width="120" height="120" style="border-radius:12px;" />
+      <br />
+      <b>강혜정</b><br/>
+      <sub>Full-stack</sub><br/>
+      <a href="https://github.com/timothyk7-jpg">@timothyk7-jpg</a>
+    </td>
+    <td align="center" width="180">
+      <img src="https://github.com/hj626.png?size=120" width="120" height="120" style="border-radius:12px;" />
+      <br />
+      <b>김재혁</b><br/>
+      <sub>Full-stack</sub><br/>
+      <a href="https://github.com/hj626">@hj626</a>
+    </td>
+    <td align="center" width="180">
+      <img src="https://github.com/1st312.png?size=120" width="120" height="120" style="border-radius:12px;" />
+      <br />
+      <b>나상훈</b><br/>
+      <sub>Full-stack</sub><br/>
+      <a href="https://github.com/1st312">@1st312</a>
+    </td>
+    <td align="center" width="180">
+      <img src="https://github.com/waguwagu796.png?size=120" width="120" height="120" style="border-radius:12px;" />
+      <br />
+      <b>임다빈</b><br/>
+      <sub>Full-stack</sub><br/>
+      <a href="https://github.com/waguwagu796">@waguwagu796</a>
+    </td>
+  </tr>
+</table>
 
 ---
 
@@ -53,14 +91,17 @@ AI가 감정을 분석하고, 감정 요약과 코멘트를 제공하는 웹 서
 ## 🖥 실행 화면
 
 ### 👤 회원 로그인 / 회원가입
+![회원 권한 흐름](gif/회원권한.gif)
+
 
 ### ✍ 일기 입력 화면
-![일기 입력 화면](git/일기%20입력화면.gif)
+![일기 입력 화면](gif/일기%20입력화면.gif)
 
 ### 🤖 감정 분석 결과 화면
-![결과 페이지](git/결과%20페이지.gif)
+![결과 페이지](gif/결과%20페이지.gif)
 
-
+## 🎥 전체 시연 영상
+[![Emotionary AI Demo](thumbnail.png)](video/emotionary_demo.mp4)
 ---
 
 ## 📁 프로젝트 구조
@@ -110,7 +151,3 @@ daily-emotion-log_team/
 
 ---
 
-## 📝 한 줄 요약
-
-**Emotionary AI는 감정을 기록하는 앱이 아니라,  
-감정을 이해하고 다시 바라보게 만드는 기록 서비스입니다.**
